@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The ng-model Directive</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body>
+<div>
+	<div data-ng-app="" data-ng-init="quantity=1;price=5">
+	<h2>Cost Calculator</h2>
+	Quantity: <input type="number" ng-model="quantity">
+	Price: <input type="number" ng-model="price">
+	<p>Total in Rupees:: <b>{{quantity * price}}</p>
+		
+	</div>
+</div>
+</body>
+</html>

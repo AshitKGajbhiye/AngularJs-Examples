@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS $http</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<p>Today's welcome message is: </p>
+	<h1>{{myWelcome}}</h1>
+</div>
+<script>
+	var app = angular.module("myApp", []);
+	app.controller('myCtrl', function($scope, $http){
+		$http.get("welcome.html").then(function(response) {
+			$scope.myWelcome = response.data;
+		});
+	});
+</script>
+</body>
+</html>

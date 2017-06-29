@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Model with two-way binding</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+Name: <input type="name" ng-model="name">
+<h1>You enter: {{name}}</h1>
+
+<script>
+	var app = angular.module("myApp", []);
+	app.controller('myCtrl', function($scope){
+		$scope.name = "Ashit";
+	});
+</script>
+	
+</div>
+</body>
+</html>

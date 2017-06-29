@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS Multiple ng-app within a page</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div id="App1" ng-app="shoppingCart" ng-controller="ShoppingController">
+	<h1>Your Order</h1>
+	<div ng-repeat="item in items">
+		<span>{{item.product_name}}</span>
+		<span>{{item.price | currency}}</span>
+		<button ng-click="remove($index);">Remove</button>
+	</div>
+</div>
+
+<div id="App2" ng-app="nameList" ng-controller="NamesController">
+	<h1>List of Names</h1>
+	<div ng-repeat="_name in names">
+		<span>{{_name.username}}</span>		
+	</div>
+</div>
+
+</body>
+
+<script>
+	var shoppingCartModule = angular.module("shoppingCart", []);
+	shoppingCartModule.controller('ShoppingController', function($scope){
+	$scope.items = [{
+	      product_name: "Product 1",
+	      price: 50
+	    }, {
+	      product_name: "Product 2",
+	      price: 20
+	    }, {
+	      product_name: "Product 3",
+	      price: 180
+	    }];
+	    $scope.remove = function(index) {
+	      $scope.items.splice(index, 1);
+	    }
+	});
+
+	var namesModule = angular.module("nameList", []);
+	namesModule.controller('NamesController', function($scope){
+		$scope.names = [{
+			username: "Ashit"
+		},
+		{
+			username: "Shareef"
+		}];
+	});
+
+	angular.bootstrap(document.getElementById("App2"), ['nameList']);
+</script>
+</html>

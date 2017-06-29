@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting data using web service</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+</head>
+<body>
+	
+	<article ng-app="booksInventoryApp">
+	  <section ng-controller="booksCtrl">
+	    <h2 ng-repeat="book in data.books">{{book.name}}</h2>    
+	  </section>
+	</article>
+
+	<script>
+		
+	</script>
+https://whispering-woodland-9020.herokuapp.com/getAllBooks
+</body>
+</html>

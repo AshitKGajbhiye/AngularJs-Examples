@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The ng-repeat Directive (with Arrays)</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body>
+	<!-- <div ng-init="fuirte=['jal', 'pari', 'ovil']" ng-app="">
+	<p>Looping with ng-repeat</p>
+		<ul>
+			<li ng-repeat="n in fuirte">
+				{{n}}
+			</li>
+		</ul>
+	</div> -->
+
+	<div ng-app="" ng-init="names=[{name:'jal',country:'sweden'},{name:'pari',country:'texes'},{name:'ovil',country:'californiya'}]">
+		<p>Looping with ng-repeat</p>
+		<ul>
+			<li ng-repeat="n in names">
+				{{n.name + ',' +  n.country}}
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
